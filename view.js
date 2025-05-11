@@ -1,5 +1,7 @@
+// view.js
 const container = document.getElementById("quote-container");
-const button = document.getElementById("consultar");
+const button = document.getElementById("get-quote");
+const input = document.getElementById("birthdate");
 
 export function disableButton() {
   button.disabled = true;
@@ -14,17 +16,33 @@ export function clearView() {
   container.classList.remove("visible", "fade-out");
 }
 
-export function renderHoroscope({ horoscope, emoji }) {
-  container.innerHTML = `<p>${emoji} ${horoscope}</p>`;
+export function renderHoroscope(message) {
+  container.textContent = message;
   container.classList.remove("fade-out");
   container.classList.add("visible");
 }
 
-export function renderError(message) {
-  container.textContent = message;
+export function renderError(msg = "Error al obtener el horóscopo.") {
+  container.textContent = msg;
   container.classList.add("visible");
 }
 
 export function fadeOut() {
   container.classList.add("fade-out");
+}
+
+export function isValidDateFormat(dateStr) {
+  return /^\d{2}-\d{2}-\d{4}$/.test(dateStr);
+}
+
+export function onDateInput(callback) {
+  input.addEventListener("input", callback);
+}
+
+export function onConsultClick(callback) {
+  button.addEventListener("click", callback);
+}
+
+export function getInputDate() {
+  return input.value;
 }

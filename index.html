@@ -6,16 +6,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Entrada de fecha -->
-    <input id="birthdate" type="text" placeholder="DD-MM-AAAA" />
+    <h1>Consulta tu horóscopo diario</h1>
 
-    <!-- Área de solo lectura -->
+    <input
+      type="text"
+      id="birthdate"
+      placeholder="DD-MM-AAAA"
+      maxlength="10"
+    />
+    <button id="consultar" disabled>Consultar</button>
+
     <div id="quote-container"></div>
 
-    <!-- Botón de consulta -->
-    <button id="get-quote" disabled>Consultar</button>
-
-    <!-- Controlador principal -->
     <script type="module" src="controller.js" defer></script>
   </body>
 </html>

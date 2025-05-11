@@ -47,9 +47,7 @@ export function getZodiacSign(dateStr) {
 
 export async function fetchHoroscope(sign) {
   try {
-    const response = await fetch(API_URL.replace("{SIGN}", sign), {
-      method: "POST",
-    });
+    const response = await fetch(API_URL.replace("{SIGN}", sign)); // método GET por defecto
 
     if (!response.ok) throw new Error("Error en la API");
 

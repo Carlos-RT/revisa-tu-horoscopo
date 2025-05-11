@@ -1,6 +1,6 @@
 // model.js
 
-const API_URL = "https://aztro.sameerkumar.website/?sign={SIGN}&day=today";
+const API_URL = "https://horosco-api.vercel.app/horoscope/{SIGN}";
 
 /**
  * Dado un string de fecha en formato DD-MM-AAAA,
